@@ -1,13 +1,12 @@
 # Frontend with VueJS
 
-
 ## Installation
 
 To install this project simply clone or download the repo:
 
-`git clone https://github.com/czapizzle/m2e-client-vue.git <dir name>`
+`git clone https://github.com/czapizzle/m2e-client-vue.git`
 
-`cd <dir name>`
+`cd m2e-client-vue`
 
 `cp .env.example .env` then add in local [API](https://github.com/czapizzle/m2e-server) URI
 
