@@ -9,7 +9,7 @@ To install this project simply clone or download the repo:
 
 `cd <dir name>`
 
-`cp .env.example .env`
+`cp .env.example .env` then add in local API URI
 
 `npm install`
 
