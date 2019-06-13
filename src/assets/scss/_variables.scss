@@ -1,0 +1,30 @@
+$transition: all .25s;
+
+$primary: #4fc08d !default;
+$link: #304455 !default;
+$secondary: #304455 !default;
+
+
+$body-background-color: #f9f6f5 !default;
+
+$base-color: #343e56 !default;
+
+$placeholder-text-color: rgba($base-color,.5) !default;
+
+$focus-color: rgba($base-color,.2) !default;
+$focus: 0 0 0 3px rgba($base-color,.2) !default;
+$focus-text: #000 !default;
+
+$border-radius: .2rem !default;
+
+$cursor-auto: auto !default;
+$cursor-pointer: pointer !default;
+$cursor-pointer__active: pointer !default;
+$cursor-text: text !default;
+$cursor-not-allowed: auto !default;
+$cursor-wait: wait !default;
+$cursor-drag: auto !default;
+$cursor-drag__active: auto !default;
+
+
+$input-background-color: #fff !default;

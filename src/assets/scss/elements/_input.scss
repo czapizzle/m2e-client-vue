@@ -1,0 +1,68 @@
+
+
+.iam-input{
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  border-radius: $border-radius;
+  transition: $transition;
+  box-shadow: none;
+  outline: none;
+  border: 2px solid $base-color;
+  background: $input-background-color;
+  &.is-disabled{
+    opacity: .3;
+  }
+  &.is-focus {
+    box-shadow: $focus;
+  }
+  &__icon{
+    padding: .25rem 0;
+  }
+  &__prefix{
+    padding-left: .75rem;
+  }
+  &__suffix{
+    padding-right: .75rem;
+  }
+  &__original{
+    display: block;
+    border: none;
+    background: transparent;
+    max-width: 100%;
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    appearance: none;
+    outline: none;
+    margin: 0;
+    padding: .25rem .75rem;
+    font-weight: inherit;
+    font-style: normal;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus{
+       -webkit-text-fill-color: $base-color;
+       -webkit-box-shadow: 0 0 0px 1000px $input-background-color inset;
+       transition: background-color 5000s ease-in-out 0s;
+    }
+    &:-webkit-input-placeholder {
+      color: $placeholder-text-color;
+    }
+    &:-moz-placeholder {
+      color: $placeholder-text-color;
+    }
+    &:-ms-input-placeholder {
+      color: $placeholder-text-color;
+    }
+    &::placeholder{
+      color: $placeholder-text-color;
+    }
+  }
+  &__action{
+    cursor: $cursor-pointer;
+  }
+}
