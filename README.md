@@ -1,4 +1,4 @@
-# Frontend with VueJS
+# Frontend with Vue
 
 
 ## Installation
