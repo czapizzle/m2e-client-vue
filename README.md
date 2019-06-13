@@ -9,7 +9,7 @@ To install this project simply clone or download the repo:
 
 `cd <dir name>`
 
-`cp .env.example .env` then add in local API URI
+`cp .env.example .env` then add in local [API](https://github.com/czapizzle/m2e-server) URI
 
 `npm install`
 
