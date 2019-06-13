@@ -9,6 +9,8 @@ To install this project simply clone or download the repo:
 
 `cd <dir name>`
 
+`cp .env.example .env`
+
 `npm install`
 
 
