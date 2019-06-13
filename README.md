@@ -1,4 +1,4 @@
-# m2e Frontend with VueJS
+# Frontend with VueJS
 
 ## Project setup
 ```
