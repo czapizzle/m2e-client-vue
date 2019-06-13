@@ -1,4 +1,4 @@
-# m2e-client-vue
+# m2e Frontend with VueJS
 
 ## Project setup
 ```
