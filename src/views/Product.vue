@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="image">
-        <img :src="'http://127.0.0.1:3000' + product.image" />
+        <img :src="product.image" />
       </div>
     </div>
 </template>

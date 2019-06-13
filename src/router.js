@@ -1,14 +1,17 @@
 import Vue from 'vue'
+import store from './store/'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Category from './views/Category.vue'
-import Product from './views/Product.vue'
-import Cart from './views/Cart.vue'
-import Account from './views/Account.vue'
+import Home from './views/Home'
+import Category from './views/Category'
+import Product from './views/Product'
+import Cart from './views/Cart'
+import Account from './views/Account'
+import Login from './views/Login'
+import Register from './views/Register'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   routes: [
     {
       path: '/',
@@ -31,6 +34,21 @@ export default new Router({
       path: '/account/',
       name: 'account',
       component: Account,
+      pathToRegexpOptions: { strict: true },
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/login/',
+      name: 'login',
+      component: Login,
+      pathToRegexpOptions: { strict: true }
+    },
+    {
+      path: '/register/',
+      name: 'register',
+      component: Register,
       pathToRegexpOptions: { strict: true }
     },
     {
@@ -52,3 +70,17 @@ export default new Router({
     }
   }
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (store.getters.isLoggedIn) {
+      next()
+      return
+    }
+    next('/login/')
+  } else {
+    next()
+  }
+})
+
+export default router

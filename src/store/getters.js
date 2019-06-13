@@ -40,3 +40,8 @@ export const total = state => {
   const discout = state.shoppingCart.totalDiscount ? -5 : 0
   return subtotal(state) + taxes(state) + shipping(state) + discout
 }
+
+
+export const user = state => state.auth.user
+export const isLoggedIn = state => !!state.auth.token
+export const authStatus = state => state.auth.status

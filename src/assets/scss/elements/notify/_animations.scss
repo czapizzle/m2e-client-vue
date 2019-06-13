@@ -1,0 +1,54 @@
+.iam.animation {
+  &.rollIn{
+    @include rollIn();
+  }
+  &.rollOut{
+    @include rollOut();
+  }
+  &.fade{
+    &.in:not(.right){
+      @include fadeIn();
+    }
+    &.out:not(.right){
+      @include fadeOut();
+    }
+    &.in.right{
+      @include fadeInRight();
+    }
+    &.out.right{
+      @include fadeOutRight();
+    }
+  }
+  &.bounce{
+    &.in{
+      @include bounceIn();
+    }
+    &.out{
+      @include bounceOut();
+    }
+  }
+  &.wobble{
+    @include wobble();
+  }
+  &.tada{
+    @include tada();
+  }
+  &.swing{
+    @include swing();
+  }
+  &.flash{
+    @include flash();
+  }
+  &.jello{
+    @include jello();
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .iam.animation {
+    -webkit-animation: unset !important;
+    animation: unset !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}

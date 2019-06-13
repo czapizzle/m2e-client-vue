@@ -1,9 +1,16 @@
 # Frontend with VueJS
 
-## Project setup
-```
-npm install
-```
+
+## Installation
+
+To install this project simply clone or download the repo:
+
+`git clone https://github.com/czapizzle/m2e-client-vue.git <dir name>`
+
+`cd <dir name>`
+
+`npm install`
+
 
 ### Compiles and hot-reloads for development
 ```

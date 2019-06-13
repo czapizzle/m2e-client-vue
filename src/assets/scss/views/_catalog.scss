@@ -1,16 +1,23 @@
 .catalog{
   &_product{
     &_list{
-
       padding: 0;
       display: flex;
       flex-wrap: wrap;
       margin: -1rem;
-      margin-top: 100px;
       &_item{
           display: block;
           padding: 1rem;
-          width: percentage(3/12);
+          width: 100%;
+          @media (min-width: 640px) {
+            width: percentage(6/12);
+          }
+          @media (min-width: 768px) {
+            width: percentage(4/12);
+          }
+          @media (min-width: 1024px) {
+            width: percentage(3/12);
+          }
           position: relative;
           img{
             display: block;
@@ -26,8 +33,6 @@
           margin: 1rem;
           display: flex;
           flex-direction: column;
-          visibility: hidden;
-          opacity: 0;
           transition: $transition;
           .title{
               font-size: 2rem

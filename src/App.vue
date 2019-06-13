@@ -1,22 +1,28 @@
 <template>
   <div id="app" class="app">
     <nav class="navbar" role="navigation" aria-label="main navigation">
-          <router-link class="navbar-item" to="/">
-            <strong>m2e</strong>
+
+          <router-link class="navbar-brand" to="/">
+            M2E
           </router-link>
 
-          <router-link v-for="category in $store.state.categories.all" :key="category.id"  :to="{ name: 'category', params: { slug: category.slug} }"  class="navbar-item">
-            {{ category.title }}
-          </router-link>
+          <div class="navbar-start">
+            <router-link v-for="category in $store.state.categories.all" :key="category.id"  :to="{ name: 'category', params: { slug: category.slug} }"  class="navbar-item">
+              {{ category.title }}
+            </router-link>
+          </div>
 
-          <router-link style="margin-left:auto;" class="navbar-item" :to="{ name: 'account' }">
-              My account
-          </router-link>
-
-          <router-link class="navbar-item iam-badge" :to="{ name: 'cart' }">
-              Cart <sup class="iam-badge__content is-fixed" v-if="$store.state.shoppingCart.added.length > 0">{{ $store.state.shoppingCart.added.length }}</sup>
-          </router-link>
-
+          <div class="navbar-end">
+            <router-link class="navbar-item" :to="{ name: 'account' }">
+              <span v-if="user">{{ user }}</span>
+              <span v-else>My account</span>
+            </router-link>
+            <div class="navbar-item">
+              <router-link class="iam-button iam-badge" :to="{ name: 'cart' }">
+                  Cart <sup class="iam-badge__content is-fixed" v-if="$store.state.shoppingCart.added.length > 0">{{ $store.state.shoppingCart.added.length }}</sup>
+              </router-link>
+            </div>
+        </div>
     </nav>
     <transition name="fade" mode="out-in">
       <router-view/>
@@ -28,7 +34,8 @@
 import { mapActions, mapState } from 'vuex'
 export default {
   computed: mapState({
-    products: state => state.products.all
+    products: state => state.products.all,
+    user: state => state.auth.user.name
   }),
   methods: mapActions([
     'getProducts', 'getCategories'
@@ -36,8 +43,10 @@ export default {
   created () {
     this.getProducts()
     this.getCategories()
+    if (this.$store.getters.isLoggedIn) {
+      this.$store.dispatch('user')
+    }
   }
-
 }
 </script>
 <style lang="scss">

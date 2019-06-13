@@ -1,5 +1,17 @@
-
-
+.iam-field{
+  margin-bottom: 1rem;
+}
+.iam-label{
+  font-size: 0.9rem;
+}
+.iam-form{
+  max-width: 500px;
+  margin: auto;
+}
+.help.invalid{
+  font-size: 0.9rem;
+  color: red;
+}
 .iam-input{
   position: relative;
   display: flex;

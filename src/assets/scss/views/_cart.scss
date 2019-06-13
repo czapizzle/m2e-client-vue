@@ -1,44 +1,32 @@
 .cart{
   position: relative;
-  padding: 5rem;
   width: 100%;
-  min-height:100%;
   .table{
     width: 100%;
+    margin-bottom: 2rem;
     td{
-      padding: 0;
+      padding: 0.5rem 0;
     }
     .quantity{
       width: 120px;
     }
   }
-  &__items{
-    display: flex;
-    height: 100%;
-  }
-  &__table{
-    width: 70%;
-    padding: 5%;
-  }
   &__summary{
-    width: 30%;
+    > div{
+      margin-bottom: 1rem;
+    }
   }
-  a{
-    text-decoration: none;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  .router-link-active{
-    position: relative;
-    &:after{
-      content: ' ';
-      position: absolute;
-      bottom:0;
-      left: 0;
-      display: block;
-      height: 2px;
-      width: 100%;
+  @media (min-width: 1024px) {
+    &__items{
+      display: flex;
+    }
+    &__table{
+      width: 60%;
+    }
+    &__summary{
+      width: 40%;
       background: #fff;
+      padding: 2rem;
     }
   }
 }
